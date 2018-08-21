@@ -1,0 +1,22 @@
+<div class="section">
+    <h2>Available Burgers</h2>
+    <ul>
+        {{#each burgers}} {{#unless devoured}} {{> burgers/uneaten-block devoured=0}} {{/unless}} {{/each}}
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Eaten Burgers</h2>
+    <ul>
+        {{#each burgers}} {{#if devoured}} {{> burgers/eaten-block devoured=1}} {{/if}} {{/each}}
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Add Burger</h2>
+    <form id="add-burger">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="burger-name" />
+        <button type="submit">Add</button>
+    </form>
+</div>
